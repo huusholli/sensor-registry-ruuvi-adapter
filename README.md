@@ -1,6 +1,6 @@
 # RUUVI-ADAPTER
 
-Adapter between RuuviTags and [https://github.com/huusholli/sensor-registry](Sensor Registry)
+Adapter between RuuviTags and [Sensor Registry](https://github.com/huusholli/sensor-registry)
 
 ## Installation
 
