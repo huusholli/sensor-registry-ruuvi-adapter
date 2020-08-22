@@ -8,6 +8,10 @@ Better to follow instructions described here:
 
 https://github.com/ttu/ruuvitag-sensor/blob/master/install_guide_pi.md
 
-# License
+## Storage
+
+App writes it's data at `data/database.json`. For backups etc. it's enough to simply copy that file.
+
+## License
 
 MIT
