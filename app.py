@@ -22,7 +22,6 @@ def post_sensor_data(sensor_id, value):
     {'name': 'pressure', 'value': value.get('pressure')},
   ]
 
-  print(data)
   client.post(data, request_headers={'x-device-id': sensor_id})
 
 RuuviTagSensor.get_datas(handle_ruuvi_data)
