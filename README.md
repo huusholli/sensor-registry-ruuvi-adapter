@@ -8,9 +8,30 @@ Better to follow instructions described here:
 
 https://github.com/ttu/ruuvitag-sensor/blob/master/install_guide_pi.md
 
-## Storage
+## Run as systemd service
 
-App writes it's data at `data/database.json`. For backups etc. it's enough to simply copy that file.
+Example configuration is as follows
+
+```
+# /etc/systemd/system/ruuvi-adapter.service
+# start on boot: sudo systemctl enable ruuvi-adapter
+
+[Unit]
+Description=RuuviTag Adapter for Sensor Registry
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python app.py
+WorkingDirectory=/home/pi/ruuvi-adapter
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+Environment="SENSOR_REGISTRY_HOST=http://path-to-sensor-registry"
+
+[Install]
+WantedBy=multi-user.target
+```
 
 ## License
 
